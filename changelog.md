@@ -9,3 +9,7 @@
 # 3
 
 - Changed project version type
+
+# 4
+
+- Updated "Chapter 1" section
