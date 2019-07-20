@@ -5,3 +5,7 @@
 # 0.1.1
 
 - Updated "Chapter 1" section
+
+# 3
+
+- Changed project version type
