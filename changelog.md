@@ -17,3 +17,7 @@
 ## 5
 
 - Updated "Chapter 1" section
+
+## 6
+
+- Updated "Chapter 1" section
