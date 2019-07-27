@@ -29,3 +29,7 @@
 ## 2019-07-21 Version 8
 
 - Updated "Chapter 1" section and added .gitignore file
+
+## 2019-07-27 Version 9
+
+- Updated "Chapter 1" section
