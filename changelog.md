@@ -33,3 +33,7 @@
 ## 2019-07-27 Version 9
 
 - Updated "Chapter 1" section
+
+## 2019-07-28 Version 10
+
+- Completed "Chapter 1" section

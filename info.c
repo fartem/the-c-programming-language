@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define VERSION 9
+#define VERSION 10
 
 void print_with_new_line(char *__args, ...);
 
