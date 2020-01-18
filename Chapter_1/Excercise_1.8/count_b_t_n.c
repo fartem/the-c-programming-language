@@ -27,6 +27,5 @@ int main()
     }
 
     printf("Blanks: %d\nTabs: %d\nNew lines: %d", blanks, tabs, new_lines);
-    
     return 0;
 }

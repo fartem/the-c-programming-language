@@ -34,7 +34,6 @@ int main()
     {
         printf("Longest: %s", longest);
     }
-    
     return 0;
 }
 
@@ -53,10 +52,7 @@ int getln(char line[], int limit)
         line[i] = c;
         i++;
     }
-    
-
     line[i] = '\0';
-
     return i;
 }
 

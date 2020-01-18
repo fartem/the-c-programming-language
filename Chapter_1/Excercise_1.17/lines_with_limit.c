@@ -21,7 +21,6 @@ int main()
            printf("Line: %s", line);
        }
     }
-    
     return 0;
 }
 
@@ -40,8 +39,6 @@ int getln(char line[], int limit)
         line[i] = c;
         i++;
     }
-    
     line[i] = '\0';
-
     return i;
 }

@@ -22,6 +22,5 @@ int main()
         printf("%3.0f %6.1f\n", celsius, fahr);
         celsius += step;
     }
-
     return 0;
 }

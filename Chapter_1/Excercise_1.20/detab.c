@@ -19,11 +19,8 @@ int main()
     char tab_line[MAXLINE];
 
     getln(line, MAXLINE);
-
     detab(line, tab_line);
-
     printf("Output: %s", tab_line);
-
     return 0;
 }
 
@@ -42,9 +39,7 @@ int getln(char line[], int limit)
         line[i] = c;
         i++;
     }
-
     line[i] = '\0';
-
     return i;
 }
 

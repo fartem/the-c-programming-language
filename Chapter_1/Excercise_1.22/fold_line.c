@@ -43,7 +43,6 @@ int main()
         }
         printf("%s", line);
     }
-
     return 0;
 }
 

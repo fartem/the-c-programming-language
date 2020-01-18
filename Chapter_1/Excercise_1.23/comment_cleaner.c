@@ -17,11 +17,8 @@ int main()
     char clean_string[MAXLINELENGTH];
 
     get_string(string, MAXLINELENGTH);
-
     remove_comments(string, clean_string);
-
     printf("%s", clean_string);
-
     return 0;
 }
 
@@ -38,9 +35,7 @@ int get_string(char string[], int limit)
     {
         string[i++] = c;
     }
-
     string[i] = '\0';
-
     return i;
 }
 
@@ -99,6 +94,5 @@ void remove_comments(char string[], char clean_string[])
             clean_string[j++] = string[i++];
         }
     }
-    
     clean_string[i] = '\0';
 }

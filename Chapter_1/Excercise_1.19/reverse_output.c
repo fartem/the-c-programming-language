@@ -20,7 +20,6 @@ int main()
         reverse(line);
         printf("Output: %s\n", line);
     }
-
     return 0;
 }
 
@@ -41,7 +40,6 @@ int getln(char line[], int limit)
     }
 
     line[i] = '\0';
-
     return i;
 }
 

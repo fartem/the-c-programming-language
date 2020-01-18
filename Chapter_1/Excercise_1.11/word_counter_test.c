@@ -39,6 +39,5 @@ int main()
     }
 
     printf("Words: %d\nLines: %d\nSymbols: %d", words, lines, chars);
-
     return 0;
 }

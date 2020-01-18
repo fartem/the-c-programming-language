@@ -26,6 +26,5 @@ int main()
         }
         last_c = c;
     }
-
     return 0;
 }
