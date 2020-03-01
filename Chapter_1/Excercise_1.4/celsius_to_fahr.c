@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /*
-Write a program to print the corresponding Celsius to Fahrenheit table.
-*/
+ * Write a program to print the corresponding Celsius to Fahrenheit table.
+ */
 
 int main()
 {

@@ -4,11 +4,11 @@
 #define OUT 0
 
 /*
-How would you test the word count program?
-What kinds of input are most lineskely to uncover bugs if there are any?
-
-Test with empty strings and large input
-*/
+ * How would you test the word count program?
+ * What kinds of input are most lineskely to uncover bugs if there are any?
+ *
+ * Test with empty strings and large input
+ */
 
 int main()
 {

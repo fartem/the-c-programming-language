@@ -3,9 +3,9 @@
 #define BLANK ' '
 
 /*
-Write a Program to copy its input to its output,
-replacing each string of one or more blanks by a single blank
-*/
+ * Write a Program to copy its input to its output,
+ * replacing each string of one or more blanks by a single blank
+ */
 
 int main()
 {

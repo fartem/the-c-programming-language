@@ -5,8 +5,8 @@
 #define STEP 20
 
 /*
-Rewrite the temperature conversion program of Section 1.2 to use a function for conversion.
-*/
+ * Rewrite the temperature conversion program of Section 1.2 to use a function for conversion.
+ */
 
 void print_fahr_to_celsius_table();
 void print_celsius_to_fahr_table();

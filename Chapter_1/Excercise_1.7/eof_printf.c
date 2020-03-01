@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /*
-Write a Program to print the value of EOF.
-*/
+ * Write a Program to print the value of EOF.
+ */
 
 int main()
 {

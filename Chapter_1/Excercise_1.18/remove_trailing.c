@@ -3,9 +3,9 @@
 #define MAXLINE 1000
 
 /*
-Write a program to remove trailing blanks and tabs
-from each line of input, and to delete entirely blank lines.
-*/
+ * Write a program to remove trailing blanks and tabs
+ * from each line of input, and to delete entirely blank lines.
+ */
 
 int getln(char line[], int limit);
 int remove_trail(char line[], int len);

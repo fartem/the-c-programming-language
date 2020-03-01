@@ -3,8 +3,8 @@
 #define CHARS 128
 
 /*
-Write a program to print a histogram of the frequencies of different characters in its input.
-*/
+ * Write a program to print a histogram of the frequencies of different characters in its input.
+ */
 
 int main()
 {

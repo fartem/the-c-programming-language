@@ -4,8 +4,8 @@
 #define LIMIT 80
 
 /*
-Write a program to print all input lines that are longer than 80 characters.
-*/
+ * Write a program to print all input lines that are longer than 80 characters.
+ */
 
 int getln(char line[], int limit);
 
