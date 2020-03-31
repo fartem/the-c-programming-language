@@ -18,13 +18,13 @@ int main()
     printf("Minimum signed int: %d\n", -(int) ((unsigned int) ~0 >> 1) - 1);
     printf("Maximum signed int: %d\n", (int) ((unsigned int) ~0 >> 1));
 
-    printf("Minimum signed long: %d\n", -(long) ((unsigned long) ~0 >> 1) - 1);
-    printf("Maximum signed long: %d\n", (long) ((unsigned long) ~0 >> 1));
+    printf("Minimum signed long: %ld\n", -(long) ((unsigned long) ~0 >> 1) - 1);
+    printf("Maximum signed long: %ld\n", (long) ((unsigned long) ~0 >> 1));
 
-    printf("Maximum unsigned char: %\n", (unsigned char) ~0);
-    printf("Maximum unsigned short: %\n", (unsigned short) ~0);
-    printf("Maximum unsigned int: %\n", (unsigned int) ~0);
-    printf("Maximum unsigned long: %\n", (unsigned long) ~0);
+    printf("Maximum unsigned char: %d\n", (unsigned char) ~0);
+    printf("Maximum unsigned short: %d\n", (unsigned short) ~0);
+    printf("Maximum unsigned int: %u\n", (unsigned int) ~0);
+    printf("Maximum unsigned long: %lu\n", (unsigned long) ~0);
 
     return 0;
 }
