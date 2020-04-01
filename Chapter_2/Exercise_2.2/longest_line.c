@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX_LINE 1000
+#define MAX_LENGTH 1000
 
 /*
  * Write a loop equivalent for getline without using && and ||
@@ -15,10 +15,10 @@ int main()
     int length;
     int max = 0;
 
-    char line[MAX_LINE];
-    char maxLine[MAX_LINE];
+    char line[MAX_LENGTH];
+    char maxLine[MAX_LENGTH];
 
-    while ((length = getLine(line, MAX_LINE)) > 0)
+    while ((length = getLine(line, MAX_LENGTH)) > 0)
     {
         if (length > max)
         {
