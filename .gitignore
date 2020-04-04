@@ -1,5 +1,6 @@
 // vscode
 .vscode/settings.json
 
-// Windows output
+// Outputs
 a.exe
+a.out
