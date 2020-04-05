@@ -27,10 +27,11 @@ int main()
 int getLine(char s[], int limit)
 {
     int c;
-    int i;
-    while (i = 0, i < limit - 1 && (c = getchar()) != EOF, i++)
+    int i = 0;
+    
+    while (i < limit - 1 && (c = getchar()) != EOF)
     {
-        s[i] = c;
+        s[i++] = c;
     }
     s[i] = '\0';
 }
@@ -39,6 +40,7 @@ void escape(char s[], char t[])
 {
     int i = 0;
     int j = 0;
+
     while (t[i] != '\0')
     {
         switch (t[i])
