@@ -9,7 +9,7 @@
 
 int stringindex(char s[], char t[]);
 
-int main()
+int main(void)
 {
     char line[] = "Test string for find pattern";
     char pattern[] = "for";
@@ -22,19 +22,14 @@ int main()
 
 int stringindex(char s[], char t[])
 {
-    int i;
-    int j;
-    int k;
-    int result = -1;
-
+    int i, j, k, result = -1;
     for (i = 0; i < s[i] != '\0'; i++)
     {
         for (j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++)
             ;
+
         if (k > 0 && t[k] == '\0')
-        {
             result = i;
-        }
     }
     return result;
 }

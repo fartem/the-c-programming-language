@@ -13,7 +13,7 @@
 int getln(char line[], int limit);
 void detab(char line[], char tab_line[]);
 
-int main()
+int main(void)
 {
     char line[MAXLINE];
     char tab_line[MAXLINE];
@@ -28,11 +28,8 @@ int getln(char line[], int limit)
 {
     char c;
     int i;
-    
     for (i = 0; i < limit - 1 && ((c = getchar()) != EOF && c != '\n'); i++)
-    {
         line[i] = c;
-    }
 
     if (c == 'n')
     {
@@ -49,7 +46,6 @@ void detab(char line[], char tab_line[])
     int spacew;
 
     i = j = 0;
-
     while (line[i] != '\0')
     {
         // Get spaces for current index:
@@ -70,9 +66,7 @@ void detab(char line[], char tab_line[])
     }
     
     if (line[i] == '\n')
-    {
         tab_line[j++] = line[i];
-    }
     
     tab_line[j] = '\0';
 }

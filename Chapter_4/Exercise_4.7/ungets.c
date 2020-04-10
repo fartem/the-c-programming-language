@@ -12,12 +12,12 @@
 int bufp = 0;
 int buffer[MAX_BUFFER];
 
-int getch();
+int getch(void);
 void ungetch(int c);
 void ungets(char s[]);
 int getLine(char s[], int limit);
 
-int main()
+int main(void)
 {
     char line[MAX_LINE];
     int c;
@@ -26,25 +26,19 @@ int main()
     ungets(line);
 
     while ((c = getch()) != EOF)
-    {
         putchar(c);
-    }
+
     return 0;
 }
 
 int getLine(char s[], int limit)
 {
-    int c;
-    int i;
-    
+    int c, i;
     for (i = 0; i < limit - 1 && (c = getchar()) != EOF && c != '\n'; i++)
-    {
         s[i] = c;
-    }
     if (c == '\n')
-    {
         s[i++] = c;
-    }
+
     s[i] = '\0';
 }
 
@@ -60,13 +54,9 @@ void ungets(char s[])
 void ungetch(int c)
 {
     if (bufp > MAX_BUFFER)
-    {
         printf("ungetch: Error! Too many characters in buffer!");
-    }
     else
-    {
         buffer[bufp++] = c;
-    }
 }
 
 int getch()

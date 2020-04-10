@@ -7,16 +7,16 @@
  * and measure the difference in runtime.
  */
 
-int binSearch(int x, int arr[], int n);
+int bin_search(int x, int arr[], int n);
 
-int main()
+int main(void)
 {
     int arr[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    printf("%d", binSearch(1, arr, 10));
+    printf("%d", bin_search(1, arr, 10));
     return 0;
 }
 
-int binSearch(int x, int arr[], int n)
+int bin_search(int x, int arr[], int n)
 {
     int low = 0;
     int high = n - 1;
@@ -25,20 +25,12 @@ int binSearch(int x, int arr[], int n)
     while (low < high && x != arr[mid])
     {
         if (x > arr[mid])
-        {
             low = mid + 1;
-        }
         else
-        {
             low = high - 1;
-        }
     }
     if (x == arr[mid])
-    {
         return mid;
-    }
     else
-    {
         return -1;
-    }
 }

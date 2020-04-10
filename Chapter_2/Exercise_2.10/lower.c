@@ -7,13 +7,12 @@
 
 int lower(int c);
 
-int main()
+int main(void)
 {
     int c;
     while ((c = getchar()) != EOF)
-    {
         putchar(lower(c));
-    }
+
     return 0;
 }
 

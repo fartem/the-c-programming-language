@@ -12,10 +12,10 @@
 
 int getop(char s[]);
 void push(double d);
-double pop();
+double pop(void);
 void mathfnc(char s[]);
 
-int main()
+int main(void)
 {
     int type;
     double op1;
@@ -47,24 +47,16 @@ int main()
         case '/':
             op1 = pop();
             if (op1 != 0.0)
-            {
                 push(pop() / op1);
-            }
             else
-            {
                 printf("main: Error! Cannot delete by zero!");
-            }
             break;
         case '%':
             op1 = pop();
             if (op1 != 0.0)
-            {
                 push(fmod(pop(), op1));
-            }
             else
-            {
                 printf("main: Error! Cannot delete by zero!");
-            }
             break;
         case '?':
             op1 = pop();
@@ -133,13 +125,9 @@ double stack[MAX_VAL];
 void push(double d)
 {
     if (sp < MAX_VAL)
-    {
         stack[sp++] = d;
-    }
     else
-    {
         printf("push: Error! Stack is full!");
-    }
 }
 
 double pop()
@@ -176,9 +164,7 @@ int getop(char s[])
     s[1] = '\0';
 
     if (!isdigit(c) && c != '.' && c != '-')
-    {
         return c;
-    }
 
     if (c == '-')
     {
@@ -210,9 +196,8 @@ int getop(char s[])
 
     s[i] = '\0';
     if (c != EOF)
-    {
         ungetch(c);
-    }
+
     return NUMBER;
 }
 
@@ -229,11 +214,7 @@ int getch()
 void ungetch(int c)
 {
     if (buffer_position >= BUFFER_SIZE)
-    {
         printf("ungetch: Error! Too many characters!");
-    }
     else
-    {
         buffer[buffer_position++] = c;
-    }
 }

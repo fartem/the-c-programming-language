@@ -7,7 +7,7 @@
 
 unsigned setBits(unsigned x, int p, int n, unsigned y);
 
-int main()
+int main(void)
 {
     printf("%u", setBits((unsigned) 12, 3, 2, (unsigned) 57));
     return 0;

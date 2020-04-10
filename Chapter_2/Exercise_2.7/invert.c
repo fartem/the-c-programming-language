@@ -8,7 +8,7 @@
 
 unsigned invert(unsigned x, int p, int n);
 
-int main()
+int main(void)
 {
     printf("%u", invert((unsigned) 8, 3, 3));
     return 0;

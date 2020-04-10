@@ -14,7 +14,7 @@ void itoa(int n, char s[]);
 void reverse(char s[]);
 int abs(int x);
 
-int main()
+int main(void)
 {
     int number = -2147483648;
     char str[MAX_LENGTH];
@@ -37,9 +37,8 @@ void itoa(int n, char s[])
     } while ((n /= 10) != 0);
 
     if (sign < 0)
-    {
         s[i++] = '-';
-    }
+
     s[i] = '\0';
     reverse(s);
 }
@@ -51,10 +50,7 @@ int abs(int x)
 
 void reverse(char s[])
 {
-    int c;
-    int i;
-    int j;
-
+    int c, i, j;
     for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
     {
         c = s[i];

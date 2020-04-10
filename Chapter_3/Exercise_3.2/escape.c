@@ -9,10 +9,10 @@
  * converting escape sequences into the real characters.
  */
 
-int getLine(char s[], int limit);
+int get_line(char s[], int limit);
 void escape(char s[], char t[]);
 
-int main()
+int main(void)
 {
     char s[MAX_LENGTH];
     char t[MAX_LENGTH];
@@ -24,23 +24,18 @@ int main()
     return 0;
 }
 
-int getLine(char s[], int limit)
+int get_line(char s[], int limit)
 {
-    int c;
-    int i = 0;
-    
+    int c, i = 0;
     while (i < limit - 1 && (c = getchar()) != EOF)
-    {
         s[i++] = c;
-    }
+
     s[i] = '\0';
 }
 
 void escape(char s[], char t[])
 {
-    int i = 0;
-    int j = 0;
-
+    int i = 0, j = 0;
     while (t[i] != '\0')
     {
         switch (t[i])

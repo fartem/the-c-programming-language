@@ -7,7 +7,7 @@
  * replacing each string of one or more blanks by a single blank
  */
 
-int main()
+int main(void)
 {
     char c;
     char last_c = '-';
@@ -16,14 +16,11 @@ int main()
         if (c == BLANK)
         {
             if (last_c != BLANK)
-            {
                 putchar(c);
-            }
         }
         else
-        {
             putchar(c);
-        }
+
         last_c = c;
     }
     return 0;

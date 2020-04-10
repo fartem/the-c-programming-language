@@ -5,7 +5,7 @@
  * character not listed above.
  */
 
-int main()
+int main(void)
 {
     printf("Hello World!\c");
 	return 0;

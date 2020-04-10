@@ -5,7 +5,7 @@
  * to see what error messages you get.
  */
 
-int main()
+int main(void)
 {
 	printf("Hello World!");
 	return 0;

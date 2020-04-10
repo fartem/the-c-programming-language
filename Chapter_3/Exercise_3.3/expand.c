@@ -9,10 +9,10 @@
  * or trailing -is taken literally.
  */
 
-int getLine(char s[], int limit);
+int get_line(char s[], int limit);
 void expand(char first[], char second[]);
 
-int main()
+int main(void)
 {
     char first[MAX_LENGTH];
     char second[MAX_LENGTH];
@@ -24,19 +24,15 @@ int main()
     return 0;
 }
 
-int getLine(char s[], int limit)
+int get_line(char s[], int limit)
 {
-    int c;
-    int i;
-    
+    int c, i;
     for (i = 0; i < limit - 1 && (c = getchar()) != EOF && c != '\n'; i++)
-    {
         s[i] = c;
-    }
+
     if (c == '\n')
-    {
         s[i++] = c;
-    }
+
     s[i] = '\0';
 }
 
@@ -45,16 +41,13 @@ void expand(char first[], char second[])
     int i = 0;
     int j = 0;
     int c;
-
     while ((c = first[i++]) != '\0')
     {
         if (first[i] == '-' && first[i + 1] >= c)
         {
             i++;
             while (c < first[i])
-            {
                 second[j++] = c++;
-            }
         }
         else
         {

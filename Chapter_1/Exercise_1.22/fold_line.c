@@ -12,25 +12,21 @@
 
 int get_max_line(char line[]);
 
-int main()
+int main(void)
 {
     int t, length, location, spaceholder;
-
     char line[MAXLINESIZE];
-
     while ((length = get_max_line(line)) != 0)
     {
         if (length > MAXFOLDLENGTH)
         {
             t = 0;
             location = 0;
-
             while (t < length)
             {
                 if (line[t] == ' ')
-                {
                     spaceholder = t;
-                }
+                
                 if (location == MAXFOLDLENGTH)
                 {
                     line[spaceholder] = '\n';
@@ -49,11 +45,9 @@ int main()
 int get_max_line(char line[])
 {
     int i, c;
-
     for (i = 0; i < MAXLINESIZE && ((c = getchar()) != EOF && c != '\n'); i++)
-    {
         line[i] = c;
-    }
+
     if (c == '\n')
     {
         line[i] = c;

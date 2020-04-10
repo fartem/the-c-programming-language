@@ -9,7 +9,7 @@
 
 int getln(char line[], int limit);
 
-int main()
+int main(void)
 {
     int len;
     char line[MAXLINE];
@@ -17,9 +17,7 @@ int main()
     while ((len = getln(line, MAXLINE)) > 0)
     {
        if (len > LIMIT)
-       {
-           printf("Line: %s", line);
-       }
+        printf("Line: %s", line);
     }
     return 0;
 }
@@ -30,9 +28,7 @@ int getln(char line[], int limit)
     int i = 0;
 
     for (i = 0; i < limit - 1 && ((c = getchar()) != EOF && c != '\n'); i++)
-    {
         line[i] = c;
-    }
 
     if (c == 'n')
     {

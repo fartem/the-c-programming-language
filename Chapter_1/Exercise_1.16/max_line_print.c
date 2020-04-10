@@ -10,16 +10,12 @@
 int getln(char line[], int limit);
 void copy(char from[], char to[]);
 
-int main()
+int main(void)
 {
-    int len;
-    int max;
-
-    char line[MAXLINE];
-    char longest[MAXLINE];
+    int len, max;
+    char line[MAXLINE], longest[MAXLINE];
 
     max = 0;
-
     while ((len = getln(line, MAXLINE)) > 0)
     {
         if (len > max)
@@ -31,21 +27,16 @@ int main()
     }
 
     if (max > 0)
-    {
         printf("Longest: %s", longest);
-    }
+
     return 0;
 }
 
 int getln(char line[], int limit)
 {
-    char c;
-    int i;
-    
+    char c, i;;
     for (i = 0; i < limit - 1 && ((c = getchar()) != EOF && c != '\n'); i++)
-    {
         line[i] = c;
-    }
 
     if (c == 'n')
     {
@@ -59,9 +50,6 @@ int getln(char line[], int limit)
 void copy(char from[], char to[])
 {
     int i = 0;
-
     while ((to[i] = from[i]) != '\0')
-    {
         i++;
-    }
 }

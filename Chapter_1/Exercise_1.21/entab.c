@@ -9,10 +9,9 @@
  * would suffice to reach a tab stop, which should be given preference?
  */
 
-int main() {
+int main(void) {
     char c;
     int b, t, position;
-
     for (position = 1; (c = getchar()) != EOF; position++) {
         if (c == ' ') {
             if (position % TABSTOP != 0)
@@ -27,30 +26,25 @@ int main() {
         }
         else
         {
-            for ( ; b > 0; b--) {
+            for ( ; b > 0; b--)
                 putchar('\t');
-            }
+
             if (c == '\t')
             {
                 b = 0;
             }
             else
             {
-                for ( ; b > 0; b--) {
+                for ( ; b > 0; b--)
                     putchar(' ');
-                }
             }
 
             putchar(c);
 
             if (c == '\n')
-            {
                 position = 0;
-            }
             else if (c == '\t')
-            {
                 position = position + (TABSTOP - (position - 1) % TABSTOP) - 1;
-            }
         }
     }
     return 0;

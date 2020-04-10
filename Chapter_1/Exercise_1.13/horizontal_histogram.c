@@ -5,20 +5,15 @@
  * It is easy to draw the histogram with the bars horizontal.
  */
 
-int main()
+int main(void)
 {
     char c;
-
     while ((c = getchar()) != EOF)
     {
         if (c == ' ' || c == '\n' || c == '\t')
-        {
             putchar('\n');
-        }
         else
-        {
             putchar('*');
-        }
     }
     return 0;
 }

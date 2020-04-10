@@ -9,27 +9,22 @@
 
 int brace, brack, paren;
 
-void incomment();
+void incomment(void);
 void inquote(int c);
 void search(int c);
 
-int main()
+int main(void)
 {
     int c;
     extern int brace, brack, paren;
-
-    while((c=getchar()) != EOF)
+    while((c = getchar()) != EOF)
     {
         if(c == '/')
         {
             if((c = getchar()) == '*')
-            {
                 incomment();
-            }
             else
-            {
                 search(c);
-            }
         }       
         else if(c == '\'' || c == '"')
         {
@@ -58,23 +53,17 @@ int main()
     }
     
     if (brace > 0)
-    {
         printf("Unmatched braces\n");
-    }
     else if (brack > 0)
-    {
-        printf("Unmatched brackets\n");
-    }   
+        printf("Unmatched brackets\n");  
     else if (paren > 0)
-    {
         printf("Unmatched parenthesis\n"); 
-    }
     return 0;
 }
 
-void incomment()
+void incomment(void)
 {
-    int c,d;
+    int c, d;
     
     c = getchar();
     d = getchar();
@@ -89,15 +78,11 @@ void incomment()
 void inquote(int c)
 {
     int d;
-
     putchar(c);
-
     while((d=getchar()) != c)
     {
         if(d == '\\')
-        {
             getchar();
-        }
     }   
 }
 
@@ -106,27 +91,15 @@ void search(int c)
     extern int brace, brack, paren;
 
     if (c == '{')
-    {
         --brace;
-    }
     else if (c == '}')
-    {
         ++brace;
-    }
     else if(c == '(')
-    {
         --brack;
-    }
     else if(c == ')')
-    {
         ++brack;
-    }
     else if(c == '[')
-    {
         --paren;
-    }
     else if(c == ']')
-    {
         ++paren;
-    }
 }

@@ -11,7 +11,7 @@
  * The allowable digits are 0 through 9, a through f,and A through F.
  */
 
-int getLine(char s[], int limit);
+int get_line(char s[], int limit);
 int htoi(char s[]);
 
 int main()
@@ -26,57 +26,42 @@ int main()
     return 0;
 }
 
-int getLine(char s[], int limit)
+int get_line(char s[], int limit)
 {
-    int i;
-    int c;
-
+    int i, c;
     for (i = 0; i < limit && (c = getchar()) != EOF && c != '\n'; i++)
-    {
         s[i] = c;
-    }
+
     s[i] = '\0';
     return i;
 }
 
 int htoi(char s[])
 {
-    int hexDigit;
+    int hex_digit;
     int i = 0;
-    int inHex = TRUE;
+    int in_hex = TRUE;
     int n = 0;
 
     if (s[i] == '0')
     {
         i++;
         if (s[i] == 'x' || s[i] == 'X')
-        {
             i++;
-        }
     }
-    for (; inHex == TRUE; i++)
+    for (; in_hex == TRUE; i++)
     {
         if (s[i] >= '0' && s[i] <= '9')
-        {
-            hexDigit = s[i] - '0';
-        }
+            hex_digit = s[i] - '0';
         else if (s[i] >= 'a' && s[i] <= 'f')
-        {
-            hexDigit = s[i] - 'a' + 10;
-        }
+            hex_digit = s[i] - 'a' + 10;
         else if (s[i] >= 'A' && s[i] <= 'F')
-        {
-            hexDigit = s[i] - 'A' + 10;
-        }
+            hex_digit = s[i] - 'A' + 10;
         else
-        {
             inHex = FALSE;
-        }
 
         if (inHex == TRUE)
-        {
-            n = 16 * n + hexDigit;
-        }
+            n = 16 * n + hex_digit;
     }
     return n;
 }

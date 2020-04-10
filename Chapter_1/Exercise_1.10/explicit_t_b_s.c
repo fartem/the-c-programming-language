@@ -6,10 +6,9 @@
  * This makes tabs and backspaces visible in an unambiguous way.
  */
 
-int main()
+int main(void)
 {
     char c;
-
     while ((c = getchar()) != EOF)
     {
         if (c == '\t')

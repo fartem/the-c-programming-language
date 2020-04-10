@@ -7,49 +7,42 @@
  * This program prints the longest line in the given inputs
  */
 
-int getLine(char s[], int limit);
+int get_line(char s[], int limit);
 void copy(char from[], char to[]);
 
-int main()
+int main(void)
 {
     int length;
     int max = 0;
 
     char line[MAX_LENGTH];
-    char maxLine[MAX_LENGTH];
+    char max_line[MAX_LENGTH];
 
-    while ((length = getLine(line, MAX_LENGTH)) > 0)
+    while ((length = get_line(line, MAX_LENGTH)) > 0)
     {
         if (length > max)
         {
             max = length;
-            copy(line, maxLine);
+            copy(line, max_line);
         }
     }
     
     if (max > 0)
-    {
-        printf("%s", maxLine);
-    }
+        printf("%s", max_line);
+
     return 0;
 }
 
-int getLine(char s[], int limit)
+int get_line(char s[], int limit)
 {
-    int i;
-    int c;
-
+    int i, c;
     for (i = 0; i < limit - 1; i++)
     {
         c = getchar();
         if (c == EOF)
-        {
             break;
-        }
         if (c == '\n')
-        {
             break;
-        }
         s[i] = c;
     }
     
@@ -58,7 +51,6 @@ int getLine(char s[], int limit)
         s[i] = c;
         i++;
     }
-    
     s[i] = '\0';
     return i;
 }
@@ -66,7 +58,6 @@ int getLine(char s[], int limit)
 void copy(char from[], char to[])
 {
     int i = 0;
-    while ((to[i] = from[i]) != '\0') {
+    while ((to[i] = from[i]) != '\0')
         i++;
-    }
 }

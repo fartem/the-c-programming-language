@@ -7,7 +7,7 @@
 
 unsigned rightRot(unsigned x, int n);
 
-int main()
+int main(void)
 {
     printf("%u", rightRot((unsigned) 8, 1));
     return 0;

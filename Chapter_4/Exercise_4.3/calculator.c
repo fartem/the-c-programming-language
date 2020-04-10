@@ -12,9 +12,9 @@
 
 int getop(char s[]);
 void push(double d);
-double pop();
+double pop(void);
 
-int main()
+int main(void)
 {
     int type;
     double temp_op;
@@ -40,24 +40,16 @@ int main()
         case '/':
             temp_op = pop();
             if (temp_op != 0.0)
-            {
                 push(pop() / temp_op);
-            }
             else
-            {
                 printf("main: Error! Cannot delete by zero!");
-            }
             break;
         case '%':
             temp_op = pop();
             if (temp_op != 0.0)
-            {
                 push(fmod(pop(), temp_op));
-            }
             else
-            {
                 printf("main: Error! Cannot delete by zero!");
-            }
             break;
         case '\n':
             printf("\t%.8g\n", pop());
@@ -78,13 +70,9 @@ double stack[MAX_VAL];
 void push(double d)
 {
     if (sp < MAX_VAL)
-    {
         stack[sp++] = d;
-    }
     else
-    {
         printf("push: Error! Stack is full!");
-    }
 }
 
 double pop()
@@ -107,8 +95,7 @@ void ungetch(int c);
 
 int getop(char s[])
 {
-    int i = 0;
-    int c;
+    int i = 0, c;
     
     while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
@@ -116,9 +103,7 @@ int getop(char s[])
     s[1] = '\0';
 
     if (!isdigit(c) && c != '.' && c != '-')
-    {
         return c;
-    }
 
     if (c == '-')
     {
@@ -150,9 +135,8 @@ int getop(char s[])
 
     s[i] = '\0';
     if (c != EOF)
-    {
         ungetch(c);
-    }
+
     return NUMBER;
 }
 
@@ -169,11 +153,7 @@ int getch()
 void ungetch(int c)
 {
     if (buffer_position >= BUFFER_SIZE)
-    {
         printf("ungetch: Error! Too many characters!");
-    }
     else
-    {
         buffer[buffer_position++] = c;
-    }
 }

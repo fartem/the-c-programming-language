@@ -12,14 +12,16 @@
 
 int getop(char s[]);
 void push(double d);
-double pop();
+double pop(void);
 
-int main()
+int main(void)
 {
     int type;
     int var = 0;
+
     double op1;
     double v;
+
     char s[MAX_OP];
     double variables[26];
 
@@ -45,24 +47,16 @@ int main()
         case '/':
             op1 = pop();
             if (op1 != 0.0)
-            {
                 push(pop() / op1);
-            }
             else
-            {
                 printf("main: Error! Cannot delete by zero!");
-            }
             break;
         case '=':
             pop();
             if (var >= 'A' && var <= 'Z')
-            {
                 variables[var - 'A'] = pop();
-            }
             else
-            {
                 printf("main: Error! Unknown variable name: %s\n", s);
-            }
             break;
         case '\n':
             v = pop();
@@ -70,17 +64,11 @@ int main()
             break;
         default:
             if (type >= 'A' && type <= 'Z')
-            {
                 push(variables[type - 'A']);
-            }
             else if (type == 'v')
-            {
-                 push(v);
-            }
+                push(v);
             else
-            {
                 printf("main: Error! Unknown command: %s\n", s);
-            }
             break;
         }
         var = type;
@@ -96,13 +84,9 @@ double stack[MAX_VAL];
 void push(double d)
 {
     if (sp < MAX_VAL)
-    {
         stack[sp++] = d;
-    }
     else
-    {
         printf("push: Error! Stack is full!");
-    }
 }
 
 double pop()
@@ -139,9 +123,7 @@ int getop(char s[])
     s[1] = '\0';
 
     if (!isdigit(c) && c != '.' && c != '-')
-    {
         return c;
-    }
 
     if (c == '-')
     {
@@ -173,9 +155,8 @@ int getop(char s[])
 
     s[i] = '\0';
     if (c != EOF)
-    {
         ungetch(c);
-    }
+
     return NUMBER;
 }
 
@@ -192,11 +173,7 @@ int getch()
 void ungetch(int c)
 {
     if (buffer_position >= BUFFER_SIZE)
-    {
         printf("ungetch: Error! Too many characters!");
-    }
     else
-    {
         buffer[buffer_position++] = c;
-    }
 }

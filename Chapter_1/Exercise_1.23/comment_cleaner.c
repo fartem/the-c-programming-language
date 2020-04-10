@@ -11,7 +11,7 @@
 int get_string(char string[], int limit);
 void remove_comments(char string[], char clean_string[]);
 
-int main()
+int main(void)
 {
     char string[MAXLINELENGTH];
     char clean_string[MAXLINELENGTH];
@@ -25,16 +25,12 @@ int main()
 int get_string(char string[], int limit)
 {
     int c, i = 0;
-
     while(i < limit - 1 && (c = getchar()) != EOF)
-    {
         string[i++] = c;
-    }
 
     if(c == '\n')
-    {
         string[i++] = c;
-    }
+
     string[i] = '\0';
     return i;
 }
@@ -49,20 +45,14 @@ void remove_comments(char string[], char clean_string[])
     while (string[i] != '\0')
     {
         if (in_quote == 0 && string[i] == '"')
-        {
             in_quote = 1;
-        }
         else if (in_quote == 1 && string[i] == '"')
-        {
             in_quote = 0;
-        }
         
         if (in_quote == 0)
         {
             if(string[i] == '/' && string[i + 1] == '*' && !line_comment)
-            {
                 block_comment = 1;
-            }
 
             if(string[i] == '*' && string[i + 1] == '/')
             {
@@ -71,23 +61,15 @@ void remove_comments(char string[], char clean_string[])
             }
 
             if(string[i] == '/' && string[i] == '/')
-            {
                 line_comment = 1;
-            }
 
             if(string[i] == '\n')
-            {
                 line_comment = 0;
-            }
 
             if(line_comment || block_comment)
-            {
                 ++i;
-            }
             else if(!line_comment || !block_comment)
-            {
                 clean_string[j++] = string[i++];
-            }
         }
         else
         {

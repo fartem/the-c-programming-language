@@ -10,7 +10,7 @@
  * Test with empty strings and large input
  */
 
-int main()
+int main(void)
 {
     int words = 0;
     int lines = 0;
@@ -19,7 +19,6 @@ int main()
     int state = OUT;
 
     char c;
-
     while ((c = getchar()) != EOF)
     {
         chars++;

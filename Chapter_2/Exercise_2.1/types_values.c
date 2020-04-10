@@ -7,7 +7,7 @@
  * of the various floating-point types.
  */
 
-int main()
+int main(void)
 {
     printf("Minimum signed char: %d\n", -(char) ((unsigned char) ~0 >> 1) - 1);
     printf("Maximum signed char: %d\n", (char) ((unsigned char) ~0 >> 1));

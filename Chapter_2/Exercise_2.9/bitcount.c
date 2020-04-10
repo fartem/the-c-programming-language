@@ -7,7 +7,7 @@
 
 int bitCount(unsigned x);
 
-int main()
+int main(void)
 {
     printf("%d\n", bitCount((unsigned) 5));
     return 0;

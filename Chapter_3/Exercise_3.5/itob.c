@@ -11,7 +11,7 @@
 void itob(int n, char s[], int b);
 void reverse(char s[]);
 
-int main()
+int main(void)
 {
     int number = 101;
     int base = 16;
@@ -30,9 +30,7 @@ void itob(int n, char s[], int b)
     int sign;
 
     if ((sign = n) < 0)
-    {
         n = -n;
-    }
     
     do
     {
@@ -41,19 +39,15 @@ void itob(int n, char s[], int b)
     } while ((n /= b) > 0);
 
     if (sign < 0)
-    {
         s[i++] = '-';
-    }
+
     s[i] = '\0';
     reverse(s);
 }
 
 void reverse(char s[])
 {
-    int c;
-    int i;
-    int j;
-
+    int c, i, j;
     for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
     {
         c = s[i];

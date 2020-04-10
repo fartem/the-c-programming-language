@@ -12,7 +12,7 @@
 void itoa(int n, char s[], int w);
 void reverse(char s[]);
 
-int main()
+int main(void)
 {
     int number = 509;
     int width = 10;
@@ -30,9 +30,7 @@ void itoa(int n, char s[], int w)
     int sign;
 
     if ((sign = n) < 0)
-    {
         n = -n;
-    }
     
     do
     {
@@ -40,23 +38,18 @@ void itoa(int n, char s[], int w)
     } while ((n /= 10) > 0);
     
     if (sign < 0)
-    {
         s[i++] = '-';
-    }
+
     while (i < w)
-    {
         s[i++] = ' ';
-    }
+
     s[i] = '\0';
     reverse(s);
 }
 
 void reverse(char s[])
 {
-    int c;
-    int i;
-    int j;
-
+    int c, i, j;
     for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
     {
         c = s[i];
