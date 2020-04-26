@@ -10,7 +10,7 @@
 int get_line(char s[], int limit);
 void str_cat(char *, char *);
 
-int main()
+int main(void)
 {
     int len;
     char s[LINE_LENGTH], t[LINE_LENGTH];

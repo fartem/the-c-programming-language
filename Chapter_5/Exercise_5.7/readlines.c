@@ -17,7 +17,7 @@ void write_lines(char *[], int);
 
 void q_sort(char *[], int, int);
 
-int main()
+int main(void)
 {
     int lines;
     if ((lines = read_lines(lineptr, linestor, MAX_LINES)) >= 0)

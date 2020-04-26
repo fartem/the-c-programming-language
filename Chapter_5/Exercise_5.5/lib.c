@@ -14,7 +14,7 @@ void str_copy(char *, char *, int);
 void str_cat(char *, char *, char *, int);
 int str_cmp(char *, char *, int);
 
-int main()
+int main(void)
 {
     char dest[] = "ABCD";
     char source[] = "EFG";

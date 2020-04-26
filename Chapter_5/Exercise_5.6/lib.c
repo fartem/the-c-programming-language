@@ -36,7 +36,7 @@ char buffer[BUFFER_SIZE];
 
 char pattern[] = "PATTERN";
 
-int main()
+int main(void)
 {
     char line[LINE_LENGTH];
     int found = 0;

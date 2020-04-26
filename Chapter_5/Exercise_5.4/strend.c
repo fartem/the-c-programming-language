@@ -12,7 +12,7 @@ int get_line(char s[], int limit);
 int str_end(char *, char *);
 int str_len(char *);
 
-int main()
+int main(void)
 {
     char s[LINE_LENGTH], t[LINE_LENGTH];
     int contains;
