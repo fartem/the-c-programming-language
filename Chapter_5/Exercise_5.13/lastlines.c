@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     else if (argc == 2 && (*++argv)[0] == '-')
         n = atoi(argv[0] + 1);
     else
-        error("Usage: tail [-n]");
+        error("Usage: tail [-n]\n");
 
     if (n < 1 || n > LINES)
         n = LINES;
