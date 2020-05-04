@@ -7,8 +7,8 @@
  * Be sure that -r works with -n.
  */
 
-#define NUMERIC 0
-#define DECR 1
+#define NUMERIC 1
+#define DECR 2
 #define LINES 100
 
 int numcmp(char *, char *);
