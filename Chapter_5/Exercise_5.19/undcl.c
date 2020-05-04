@@ -1,77 +1,67 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
-#include <stdlib.h>
+#include <ctype.h>
 
 /*
- * Make dcl recover from input errors.
+ * Modify undcl so that it does not add redundant parentheses to declarations.
  */
 
+#define MAX_TOKEN 100
+
 enum { NAME, PARENS, BRACKETS };
-enum { YES, NO };
 
 void dcl(void);
 void dirdcl(void);
-void error(char *);
 
 int gettoken(void);
+int nexttoken(void);
 
 int tokentype;
-char token[];
-char name[];
-char out[];
-int prevtoken = NO;
+char token[MAX_TOKEN];
+char out[1000];
 
-void dcl(void)
+int main(int argc, char *argv[])
 {
-    int ns = 0;
-    while (gettoken() == '*')
-        ns++;
-    
-    dirdcl();
-
-    while (ns-- > 0)
-        strcat(out, "pointer to");
-}
-
-void dirdcl(void)
-{
-    if (tokentype == '(')
-    {
-        dcl();
-        if (tokentype != ')')
-            error("error: missing )");
-    }
-    else if (tokentype == NAME)
-    {
-        strcpy(name, token);
-    }
-    else
-    {
-        error("error: expected name or (dsl)");
-    }
-
     int type;
-    while ((type = gettoken()) == PARENS || type == BRACKETS)
+    char temp[MAX_TOKEN];
+
+    while (gettoken() != EOF)
     {
-        if (type == PARENS)
+        strcpy(out, token);
+        while ((type = gettoken()) != '\n')
         {
-            strcat(out, "function returning");
+            if (type == PARENS || type == BRACKETS)
+            {
+                strcat(out, token);
+            }
+            else if (type == '*')
+            {
+                if ((type = nexttoken() == PARENS || type == BRACKETS))
+                {
+                    sprintf(temp, "(%s)", out);
+                }
+                else
+                {
+                    sprintf(temp, "*%s", out);
+                }
+            }
+            else if (type == NAME)
+            {
+                sprintf(temp, "%s %s", token, out);
+            }
+            else
+            {
+                printf("error: invalid input at %s\n", token);
+            }
         }
-        else
-        {
-            strcat(out, "array");
-            strcat(out, token);
-            strcat(out, "of");
-        }
+        printf("%s\n", out);
     }
+    return 0;
 }
 
-void error(char *s)
-{
-    printf("%s\n", s);
-    exit(1);
-}
+enum { YES, NO };
+
+int prevtoken = NO;
 
 int gettoken(void)
 {
@@ -128,6 +118,13 @@ int gettoken(void)
     }
 }
 
+int nexttoken(void)
+{
+    int type = gettoken();
+    prevtoken = YES;
+    return type;
+}
+
 #define BUFFER_SIZE 100
 
 char buffer[BUFFER_SIZE];
@@ -141,7 +138,7 @@ int getch(void)
 void ungetch(int c)
 {
     if (bufp > BUFFER_SIZE)
-        error("too many characters in buffer!");
+        printf("too many characters in buffer!");
     else
         buffer[bufp++] = c;
 }
